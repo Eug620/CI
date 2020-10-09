@@ -1,9 +1,9 @@
 name: GitHub Actions Build and Deploy Demo
-on: [push, build]
+on:
 # 整个流程在master分支发生push事件时触发。
-#   push:
-#     branches:
-#       - master
+  push:
+    branches:
+      - master
 # 只有一个job，运行在虚拟机环境ubuntu-latest。
 jobs:
   build-and-deploy:
