@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - dev
 # 只有一个job，运行在虚拟机环境ubuntu-latest。
 jobs:
   build-and-deploy:
