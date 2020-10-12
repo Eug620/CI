@@ -70,9 +70,9 @@ function openFNotification() {
         umbrella.setLocalStorage('hideBlog', true);
     };
     const storageFirst = umbrella.getLocalStorage('hideBlog');
-    if (!storageFirst) {
-        openNotification();
-    }
+    // if (!storageFirst) {
+    //     openNotification();
+    // }
 }
 
 /**
