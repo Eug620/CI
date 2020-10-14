@@ -8,7 +8,8 @@ import { useAlita } from 'redux-alita';
 import { RouteComponentProps } from 'react-router';
 import { FormProps } from 'antd/lib/form';
 import umbrella from 'umbrella-storage';
-import { GithubOutlined, LockOutlined, UserOutlined } from '@ant-design/icons';
+// import { GithubOutlined, LockOutlined, UserOutlined } from '@ant-design/icons';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { useUpdateEffect } from 'ahooks';
 
 const FormItem = Form.Item;
@@ -46,10 +47,10 @@ const Login = (props: LoginProps) => {
         ];
         return users.some((user) => user[0] === values.userName && user[1] === values.password);
     };
-    const gitHub = () => {
-        window.location.href =
-            'https://github.com/login/oauth/authorize?client_id=792cdcd244e98dcd2dee&redirect_uri=http://localhost:3006/&scope=user&state=reactAdmin';
-    };
+    // const gitHub = () => {
+    //     window.location.href =
+    //         'https://github.com/login/oauth/authorize?client_id=792cdcd244e98dcd2dee&redirect_uri=http://localhost:3006/&scope=user&state=reactAdmin';
+    // };
 
     return (
         <div className="login">
@@ -65,20 +66,17 @@ const Login = (props: LoginProps) => {
                     >
                         <Input
                             prefix={<UserOutlined size={13} />}
-                            placeholder="管理员输入admin, 游客输入guest"
+                            placeholder="管理员 : admin / 游客 : guest"
                         />
                     </FormItem>
                     <FormItem name="password" rules={[{ required: true, message: '请输入密码!' }]}>
                         <Input
                             prefix={<LockOutlined size={13} />}
                             type="password"
-                            placeholder="管理员输入admin, 游客输入guest"
+                            placeholder="管理员 : admin / 游客 : guest"
                         />
                     </FormItem>
                     <FormItem>
-                        <span className="login-form-forgot" style={{ float: 'right' }}>
-                            忘记密码
-                        </span>
                         <Button
                             type="primary"
                             htmlType="submit"
@@ -87,13 +85,6 @@ const Login = (props: LoginProps) => {
                         >
                             登录
                         </Button>
-                        <p style={{ display: 'flex', justifyContent: 'space-between' }}>
-                            <span>或 现在就去注册!</span>
-                            <span onClick={gitHub}>
-                                <GithubOutlined />
-                                (第三方登录)
-                            </span>
-                        </p>
                     </FormItem>
                 </Form>
             </div>
